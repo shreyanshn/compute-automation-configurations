@@ -232,7 +232,7 @@
             },
             "networkProfile": {
               "healthProbe" : {
-                "id" : "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/loadBalancers/', variables('loadBalancerName'), '/probes/', variables('lbProbeID'))]"
+                "id" : "[variables('lbProbeID')]"
               },
               "networkInterfaceConfigurations": [
                 {

@@ -215,7 +215,12 @@
       },
       "properties": {
         "upgradePolicy": {
-          "mode": "Rolling"
+          "mode": "Rolling",
+          "rollingUpgradePolicy": {
+            "maxBatchInstancePercent": "30",
+            "maxUnhealthyInstancePercent": "50",
+            "maxUnhealthyUpgradedInstancePercent": "50"
+          }
         },
         "virtualMachineProfile": {
           "storageProfile": {

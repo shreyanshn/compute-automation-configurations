@@ -23,5 +23,5 @@
 # SOFTWARE.
 
 apt-get install -y nginx
-This line doesnt make sense and should retur_n an error
+exit 1
 echo "Hello World from updated host" $HOSTNAME "!" | sudo tee /var/www/html/index.html

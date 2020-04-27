@@ -33,7 +33,7 @@
       "natPoolName": "[concat(variables('vmssName'), 'natpool')]",
       "bePoolName": "[concat(variables('vmssName'), 'bepool')]",
       "lbPoolID": "[concat(variables('lbID'),'/backendAddressPools/',variables('bePoolName'))]",
-      "lbProbeID": "[concat(variables('lbID'),'/probes/httpsProbe')]",
+      "lbProbeID": "[concat(variables('lbID'),'/probes/tcpProbe')]",
       "frontEndIPConfigID": "[concat(variables('lbID'), '/frontendIPConfigurations/loadBalancerFrontEnd')]",
       "location": "[resourceGroup().location]",
       "osType": {
@@ -153,10 +153,10 @@
             ],
             "probes": [
               {
-                "name": "httpsProbe",
+                "name": "tcpProbe",
                 "properties": {
-                  "protocol": "https",
-                  "port": 443,
+                  "protocol": "tcp",
+                  "port": 80,
                   "intervalInSeconds": 5,
                   "numberOfProbes": 4
                 }
@@ -172,9 +172,9 @@
                   "backendAddressPool": {
                     "id": "[variables('lbPoolID')]"
                   },
-                  "protocol": "https",
-                  "frontendPort": 443,
-                  "backendPort": 443,
+                  "protocol": "tcp",
+                  "frontendPort": 80,
+                  "backendPort": 80,
                   "enableFloatingIP": false,
                   "idleTimeoutInMinutes": 5,
                   "probe": {

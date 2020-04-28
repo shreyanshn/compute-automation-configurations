@@ -215,7 +215,12 @@
         },
         "properties": {
           "upgradePolicy": {
-            "mode": "Automatic"
+            "mode": "Automatic",
+            "rollingUpgradePolicy": {
+              "maxBatchInstancePercent": "25",
+              "maxUnhealthyInstancePercent": "25",
+              "maxUnhealthyUpgradedInstancePercent": "25"
+            }
           },
           "virtualMachineProfile": {
             "storageProfile": {
@@ -231,6 +236,9 @@
               "adminPassword": "[parameters('adminPassword')]"
             },
             "networkProfile": {
+              "healthProbe" : {
+                "id" : "[variables('lbProbeID')]"
+              },
               "networkInterfaceConfigurations": [
                 {
                   "name": "[variables('nicName')]",

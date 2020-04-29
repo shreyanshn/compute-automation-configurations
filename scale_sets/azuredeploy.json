@@ -236,9 +236,6 @@
               "adminPassword": "[parameters('adminPassword')]"
             },
             "networkProfile": {
-              "healthProbe" : {
-                "id" : "[variables('lbProbeID')]"
-              },
               "networkInterfaceConfigurations": [
                 {
                   "name": "[variables('nicName')]",
@@ -279,9 +276,9 @@
                     "autoUpgradeMinorVersion": true,
                     "settings": {
                       "fileUris": [
-                        "https://raw.githubusercontent.com/shreyanshn/compute-automation-configurations/master/automate_nginx_v2.sh"
+                        "https://raw.githubusercontent.com/shreyanshn/compute-automation-configurations/master/automate_nginx.sh"
                       ],
-                      "commandToExecute": "bash automate_nginx_v2.sh"
+                      "commandToExecute": "bash automate_nginx.sh"
                     }
                   }
                 }

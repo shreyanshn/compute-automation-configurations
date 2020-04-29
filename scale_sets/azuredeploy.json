@@ -17,7 +17,7 @@
     },
     "variables": {
       "vmssName": "myscaleset",
-      "instanceCount": "4",
+      "instanceCount": "10",
       "vmSize": "Standard_D1_v2",
       "virtualNetworkName": "[concat(variables('vmssName'), 'vnet')]",
       "subnetName": "[concat(variables('vmssName'), 'subnet')]",
@@ -215,12 +215,7 @@
         },
         "properties": {
           "upgradePolicy": {
-            "mode": "Automatic",
-            "rollingUpgradePolicy": {
-              "maxBatchInstancePercent": "25",
-              "maxUnhealthyInstancePercent": "25",
-              "maxUnhealthyUpgradedInstancePercent": "25"
-            }
+            "mode": "Automatic"
           },
           "virtualMachineProfile": {
             "storageProfile": {
@@ -236,6 +231,10 @@
               "adminPassword": "[parameters('adminPassword')]"
             },
             "networkProfile": {
+              "healthProbe" : {
+              "id" : "[variables('lbProbeID')]"
+            },
+
               "networkInterfaceConfigurations": [
                 {
                   "name": "[variables('nicName')]",

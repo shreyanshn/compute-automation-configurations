@@ -157,7 +157,7 @@
                 "properties": {
                   "protocol": "tcp",
                   "port": 80,
-                  "intervalInSeconds": 30,
+                  "intervalInSeconds": 5,
                   "numberOfProbes": 2
                 }
               }

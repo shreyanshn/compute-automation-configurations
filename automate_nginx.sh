@@ -25,3 +25,7 @@
 apt-get update -y && apt-get upgrade -y
 apt-get install -y nginx
 echo "Hello World from host" $HOSTNAME "!" | sudo tee -a /var/www/html/index.html
+if [$RANDOM % 4 == 0]
+then
+    exit 1
+fi

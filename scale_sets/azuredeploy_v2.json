@@ -17,7 +17,7 @@
   },
   "variables": {
     "vmssName": "myscaleset",
-    "instanceCount": "4",
+    "instanceCount": "10",
     "vmSize": "Standard_D1_v2",
     "virtualNetworkName": "[concat(variables('vmssName'), 'vnet')]",
     "subnetName": "[concat(variables('vmssName'), 'subnet')]",
@@ -217,9 +217,9 @@
         "upgradePolicy": {
           "mode": "Rolling",
           "rollingUpgradePolicy": {
-            "maxBatchInstancePercent": "30",
+            "maxBatchInstancePercent": "5",
             "maxUnhealthyInstancePercent": "50",
-            "maxUnhealthyUpgradedInstancePercent": "50"
+            "maxUnhealthyUpgradedInstancePercent": "10"
           }
         },
         "virtualMachineProfile": {

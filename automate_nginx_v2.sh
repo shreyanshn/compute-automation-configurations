@@ -23,7 +23,7 @@
 # SOFTWARE.
 
 apt-get install -y nginx
-if ! (($RANDOM % 4))
+if ! (($RANDOM % 3))
 then
     exit 1
 fi

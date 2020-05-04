@@ -17,7 +17,7 @@
     },
     "variables": {
       "vmssName": "myscaleset",
-      "instanceCount": "10",
+      "instanceCount": "4",
       "vmSize": "Standard_D1_v2",
       "virtualNetworkName": "[concat(variables('vmssName'), 'vnet')]",
       "subnetName": "[concat(variables('vmssName'), 'subnet')]",

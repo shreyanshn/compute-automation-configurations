@@ -218,8 +218,8 @@
           "mode": "Rolling",
           "rollingUpgradePolicy": {
             "maxBatchInstancePercent": "5",
-            "maxUnhealthyInstancePercent": "50",
-            "maxUnhealthyUpgradedInstancePercent": "40"
+            "maxUnhealthyInstancePercent": "60",
+            "maxUnhealthyUpgradedInstancePercent": "10"
           }
         },
         "virtualMachineProfile": {

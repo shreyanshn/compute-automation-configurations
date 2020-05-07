@@ -218,7 +218,7 @@
           "mode": "Rolling",
           "rollingUpgradePolicy": {
             "maxBatchInstancePercent": "5",
-            "maxUnhealthyInstancePercent": "60",
+            "maxUnhealthyInstancePercent": "100",
             "maxUnhealthyUpgradedInstancePercent": "10"
           }
         },
